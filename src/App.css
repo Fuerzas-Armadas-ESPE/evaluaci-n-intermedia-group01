@@ -1,0 +1,101 @@
+.redirect-message .link {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.navBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  z-index: 1000; /* Asegura que el NavBar siempre esté en la parte superior */
+}
+
+.navBar a {
+  padding: 0 15px;
+  text-decoration: none;
+  color: black;
+  /* Añade cualquier otro estilo de enlace aquí */
+}
+
+
+/* Añade esto a tu CSS global o específico de la página */
+.content {
+  margin-top: 60px; /* Ajusta este valor según la altura de tu NavBar */
+}
+
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #1dd2af, #9264f3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.auth-form-container, .welcome-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 300px;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.auth-form input[type="email"], .auth-form input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+.submit-btn, .logout-btn, .switch-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.switch-btn {
+  background-color: #6c757d;
+}
+
+.submit-btn:hover, .logout-btn:hover, .switch-btn:hover {
+  background-color: #0056b3;
+}
+
+.form-message {
+  color: red;
+  text-align: center;
+}
