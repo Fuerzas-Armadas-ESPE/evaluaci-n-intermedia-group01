@@ -1,101 +1,70 @@
-.redirect-message .link {
-  color: #007bff;
-  cursor: pointer;
-  text-decoration: underline;
+/* App.css */
+
+.navbar-custom {
+  background-color: #004d99; /* Un azul más oscuro para mayor contraste */
+  color: #fff;
 }
 
-.navBar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #f8f9fa;
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0,0,0,.1);
-  z-index: 1000; /* Asegura que el NavBar siempre esté en la parte superior */
+.navbar-custom .navbar-brand, .navbar-custom .nav-link {
+  color: #fff;
 }
 
-.navBar a {
-  padding: 0 15px;
-  text-decoration: none;
-  color: black;
-  /* Añade cualquier otro estilo de enlace aquí */
-}
-
-
-/* Añade esto a tu CSS global o específico de la página */
-.content {
-  margin-top: 60px; /* Ajusta este valor según la altura de tu NavBar */
-}
-
-
-html {
-  height: 100%;
-}
-
-body {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to right, #1dd2af, #9264f3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
-}
-
-.auth-form-container, .welcome-container {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 300px;
-}
-
-.form-title {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.auth-form label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.auth-form input[type="email"], .auth-form input[type="password"] {
-  width: calc(100% - 20px);
-  padding: 10px;
-  margin-top: 5px;
+.form-custom .form-control {
   margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 0.25rem; /* Esquinas ligeramente redondeadas */
 }
 
-.form-actions {
-  text-align: center;
-}
-
-.submit-btn, .logout-btn, .switch-btn {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
+.btn-custom {
+  background-color: #0082e6; /* Un azul más claro */
+  color: #fff;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
 }
 
-.switch-btn {
-  background-color: #6c757d;
+.btn-custom:hover {
+  background-color: #0056b3; /* Un azul cuando se pasa el ratón */
 }
 
-.submit-btn:hover, .logout-btn:hover, .switch-btn:hover {
-  background-color: #0056b3;
+.product-card {
+  width: 18rem; /* Mantiene la anchura fija */
+  height: auto; /* Altura automática según el contenido */
+  min-height: 400px; /* Altura mínima para mantener un tamaño consistente */
+  display: flex;
+  flex-direction: column; /* Organiza el contenido de la tarjeta verticalmente */
+  justify-content: space-between; /* Distribuye el espacio internamente */
+  margin-bottom: 20px; /* Añade un espacio debajo de cada tarjeta */
 }
 
-.form-message {
-  color: red;
-  text-align: center;
+.product-card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .form-custom {
+    padding: 10px;
+  }
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
