@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Importaciones necesarias
 //import logo from './logo.svg'; // Asegúrate de que este archivo existe o actualízalo según sea necesario
 import './App.css'; // Importa el CSS actualizado
@@ -8,8 +10,10 @@ import ProductCard from './productCard'; // Asegúrate de que este componente ex
 import { supabase } from './supabaseClient'; // Asegúrate de que la configuración de Supabase esté correcta
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { getAuth, signOut } from "firebase/auth";
 
 function HomePage() {
+  const auth = getAuth();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [stock, setStock] = useState("");
@@ -19,7 +23,16 @@ function HomePage() {
   // Dentro de la función HomePage, agrega estos estados
   const [order, setOrder] = useState(""); // Para el orden de los productos
   const [filterStock, setFilterStock] = useState(""); // Para el filtro de stock
-
+  const handleLogout = () => {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      console.log("Cierre de sesión exitoso");
+      // Aquí puedes redireccionar al usuario a la página de inicio de sesión u otra página
+    }).catch((error) => {
+      // An error happened.
+      console.error("Error al cerrar sesión", error);
+    });
+  };
 
   useEffect(() => {
     getProducts(searchTerm);
@@ -236,7 +249,7 @@ const generateChangesPDF = async () => {
 
         <Button className="my-3" onClick={generatePDF}>Generar PDF de los Temas</Button>
         <div className="mb-3"></div>
-        <Button className="my-3" onClick={generateChangesPDF}>Generar PDF de Historial de Cambios en los temas</Button>
+        <Button onClick={handleLogout}>Cerrar sesión</Button>
       </Container>
     </>
   );
